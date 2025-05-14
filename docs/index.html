@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+    google.load("jquery", "1.3.2");
+</script>
+
+<!-- 
+    quick html converter
+    https://htmled.it/
+ -->
+<html>
+
+<head>
+    <title>VCRBench</title>
+    <meta property="og:title"
+        content="VCRBench: Exploring Long-form Causal Reasoning Capabilities of Large Video Language Models" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+
+<body>
+    <br>
+    <center>
+        <span style="font-size:34px">Exploring Long-form Causal Reasoning Capabilities of Large Video Language Models</span>
+        <br><br>
+        <span style="font-size:20px">Preprint. Under review.</span>
+
+        <br><br>
+        <table align=center>
+            <tr>
+                <span style="font-size:20px"><a href="https://www.pritamsarkar.com">Pritam Sarkar</a></span> 
+                &nbsp; <span style="font-size:20px"><a href="https://www.aiimlab.com/ali-etemad">Ali Etemad</a></span>
+            </tr>
+        </table>
+        
+
+        <table align="center" style="margin: 20px auto; border-spacing: 40px 10px;">
+            <tr>
+              <td align="center">
+                <div style="font-size: 24px; color: #444;"><i class="fas fa-file-alt"></i></div>
+                <a href="https://arxiv.org/abs/2505.08455" style="font-size: 18px; color: #007acc; text-decoration: none;">Paper</a>
+              </td>
+              <td align="center">
+                <div style="font-size: 24px; color: #444;"><i class="fas fa-globe"></i></div>
+                <a href="https://pritamqu.github.io/VCRBench/" style="font-size: 18px; color: #007acc; text-decoration: none;">Website</a>
+              </td>
+              <td align="center">
+                <div style="font-size: 24px; color: #444;"><i class="fab fa-github"></i></div>
+                <a href="https://github.com/pritamqu/VCRBench" style="font-size: 18px; color: #007acc; text-decoration: none;">Code</a>
+              </td>
+              <td align="center">
+                <div style="font-size: 24px; color: #444;"><i class="fas fa-database"></i></div>
+                <a href="https://huggingface.co/datasets/pritamqu/VCRBench" style="font-size: 18px; color: #007acc; text-decoration: none;">Benchmark</a>
+              </td>
+              <td align="center">
+                <div style="font-size: 24px; color: #444;"><i class="fas fa-trophy"></i></div>
+                <a href="#leaderboard" style="font-size: 18px; color: #007acc; text-decoration: none;">Leaderboard</a>
+              </td>
+            </tr>
+          </table>
+    	  
+
+    <!--------------------- Abstract --------------------->
+      <table align=center>
+        <center>
+            <h1>
+                Abstract
+            </h1>
+        </center>
+        <tr>
+            <p style="text-align: justify;">
+            <!-- write abstract here -->
+            Despite recent advances in video understanding, the capabilities of Large Video Language Models (LVLMs) to perform video-based causal reasoning remains underexplored, largely due to the absence of relevant and dedicated benchmarks for evaluating causal reasoning in visually grounded and goal-driven settings. To fill this gap, we introduce a novel benchmark named Video-based long-form Causal Reasoning (VCRBench). We create VCRBench using procedural videos of simple everyday activities, where the steps are deliberately shuffled with each clip capturing a key causal event, to test whether LVLMs can identify, reason about, and correctly sequence the events needed to accomplish a specific goal. Moreover, the benchmark is carefully designed to prevent LVLMs from exploiting linguistic shortcuts, as seen in multiple-choice or binary QA formats, while also avoiding the challenges associated with evaluating open-ended QA. Our evaluation of state-of-the-art LVLMs on VCRBench suggests that these models struggle with video-based long-form causal reasoning, primarily due to their difficulty in modeling long-range causal dependencies directly from visual observations. As a simple step toward enabling such capabilities, we propose Recognition-Reasoning Decomposition (RRD), a modular approach that breaks video-based causal reasoning into two sub-tasks of video recognition and causal reasoning. Our experiments on VCRBench show that RRD significantly boosts accuracy on VCRBench, with gains of up to 25.2%. Finally, our thorough analysis reveals interesting insights, for instance, that LVLMs primarily rely on language knowledge for complex video-based long-form causal reasoning tasks.
+          </p>
+        </tr>
+    </table>
+    <br>
+
+    <!-- <br> -->
+    <table border="0" style="width: 100%; border-collapse: collapse; background-color: #CCCCFF; border-radius: 10px;">
+      <tbody>
+        <tr>
+          <td style="text-align: center; padding: 10px;"><strong> Our contributions </strong>
+            <ul style="text-align: left;">
+            <!-- <li> -->
+            &#128073;
+            We introduce VCRBench, a novel benchmark designed to evaluate LVLMs on video-based long-form causal reasoning. 
+            To the best of our knowledge, this is the first video evaluation benchmark to study multi-step causal reasoning capabilities of LVLMs. 
+            Our analysis on various state-of-the-art LVLMs reveals that current LVLMs struggle with long-form causal reasoning due to their inability of meaningfully connect a series of visual events toward a goal. 
+            <!-- </li> -->
+            <!-- <li> -->
+            <br><br>
+            &#128073;
+            To improve the performance of open-source LVLMs on VCRBench, we introduce RRD, which decomposes video-based causal reasoning into two related sub-tasks video recognition and causal reasoning. 
+            This simple modular approach allows LVLMs to focus on one type of task at a time, first recognition, then reasoning, which results in notable performance gains of up to 25.2%.             <!-- </li> -->
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br><br>
+    
+    <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+
+    <!-- <table border="0" style="width: 100%; height: 40px; border-collapse: collapse; background-color: #FAFAD2; border-radius: 10px; padding: 30px; text-align: center;">
+      <tbody>
+        <tr>
+          <td style="font-size: 20px; font-family: Arial, sans-serif;">
+            An overview of our self-alignment framework.          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br> -->
+
+
+    <table border="0" style="border-collapse: collapse; width: 100%;">
+    <tbody>
+    <tr>
+    <td style="text-align: center;"><img src="./assets/sample.png" width="100%" height="auto" /></td>
+    </tr>
+    <!-- <tr> -->
+    <td style="width: 33.33%; height: 5px; vertical-align:top; text-align: center">We present an example of video-based long-form causal
+      reasoning task from VCRBench. The correct order is: Clip 1: Cut lemon into slices, Clip 5: Squeeze
+      lemon into the pitcher, Clip 4: Pour lemon juice and water into the pitcher, Clip 3: Stir the lemonade
+      mixture, Clip 2: Pour lemonade into a glass.</td>
+    <!-- </tr> -->
+    </tbody>
+    </table>
+    <br>
+
+    <section id="leaderboard">
+      <h1>Leaderboard</h1>
+
+      <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+          <tr>
+            <th><strong>Models</strong></th>
+            <th><strong># Frames</strong></th>
+            <th><strong>Acc &uarr;</strong></th>
+            <th><strong>Step Acc &uarr;</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Random Guess</strong></td><td></td><td>7.8</td><td>24.1</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/OpenGVLab/InternVL2_5-1B" target="_blank">InternVL2.5-1B</strong></td><td>64</td><td>1.4</td><td>10.3</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/OpenGVLab/InternVL2_5-2B" target="_blank">InternVL2.5-2B</strong></td><td>64</td><td>6.3</td><td>16.2</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/Vision-CAIR/LongVU_Llama3_2_3B" target="_blank">LongVU-3B</strong></td><td>1fps</td><td>0.0</td><td>7.0</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/OpenGVLab/InternVL2_5-4B" target="_blank">InternVL2.5-4B</strong></td><td>64</td><td>1.6</td><td>9.5</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/OpenGVLab/VideoChat2_stage3_Mistral_7B" target="_blank">VideoChat2-7B</strong></td><td>16</td><td>0.3</td><td>5.8</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/OpenGVLab/InternVL2_5-8B" target="_blank">InternVL2.5-8B</strong></td><td>64</td><td>2.7</td><td>11.1</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/LVLMs-lab/LLaVA-Video-7B-Qwen2" target="_blank">LLaVA-NeXT-Video-7B</strong></td><td>64</td><td>0.0</td><td>17.4</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/openbmb/MiniCPM-o-2_6" target="_blank">MiniCPM-o-V 2.6-7B</strong></td><td>64</td><td>2.5</td><td>11.0</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct" target="_blank">Qwen2.5-VL-Instruct-7B</strong></td><td>1fps</td><td>7.1</td><td>20.9</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/DAMO-NLP-SG/VideoLLaMA3-7B" target="_blank">VideoLLaMA3-7B</strong></td><td>128</td><td>1.6</td><td>13.1</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/Efficient-Large-Model/qwen2-7b-longvila-256f" target="_blank">LongVILA-7B</strong></td><td>128</td><td>0.3</td><td>1.1</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/Vision-CAIR/LongVU_Qwen2_7B" target="_blank">LongVU-7B</strong></td><td>1fps</td><td>0.0</td><td>2.4</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/Efficient-Large-Model/NVILA-15B" target="_blank">NVILA-15B</strong></td><td>8</td><td>0.6</td><td>3.6</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/OpenGVLab/InternVL2_5-26B" target="_blank">InternVL2.5-26B</strong></td><td>64</td><td>2.7</td><td>13.7</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/OpenGVLab/InternVL2_5-38B" target="_blank">InternVL2.5-38B</strong></td><td>64</td><td>11.0</td><td>27.4</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/LVLMs-lab/LLaVA-Video-72B-Qwen2" target="_blank">LLaVA-NeXT-Video-72B</strong></td><td>32</td><td>5.2</td><td>18.6</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct" target="_blank">Qwen2.5-VL-Instruct-72B</strong></td><td>1fps</td><td>29.0</td><td>44.0</td></tr>
+          <tr><td><strong><a href="https://huggingface.co/OpenGVLab/InternVL2_5-78B" target="_blank">InternVL2.5-78B</strong></td><td>64</td><td>14.5</td><td>34.0</td></tr>
+          <tr><td><strong>GPT-4o (gpt-4o-2024-11-20)</strong></td><td>32</td><td>29.0</td><td>36.6</td></tr>
+          <tr><td><strong>Gemini-1.5-Pro (gemini-1.5-pro)</strong></td><td>1fps</td><td>48.2</td><td>65.3</td></tr>
+          <tr><td><strong>Gemini-2.0-Flash-Thinking (gemini-2.0-flash-thinking-exp)</strong></td><td>1fps</td><td>58.0</td><td>67.7</td></tr>
+          <tr><td><strong>Human</strong></td><td></td><td><strong>96.4</strong></td><td><strong>98.3</strong></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!--------------------- citation --------------------->
+    <h1>
+    Read our paper for more insights!
+    </h1>
+    <embed
+    src="https://arxiv.org/pdf/2505.08455.pdf"
+    width=100% height="600px" />
+
+    <!--------------------- citation --------------------->
+    <table align=center>
+        <center>
+            <h1>
+                Citation
+            </h1>
+        </center>
+        <tr>
+            <p style="text-align: center;">
+            Please cite our paper using the given BibTeX entry.
+            </p>
+        </tr>
+    </table>
+
+  <textarea id="bibtexEntry" readonly style="width: 100%; height: 134px; background-color: #faf9f6;">
+    @misc{sarkar2025vcrbench,
+      title={VCRBench: Exploring Long-form Causal Reasoning Capabilities of Large Video Language Models}, 
+      author={Pritam Sarkar and Ali Etemad},
+      year={2025},
+      eprint={2505.08455},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+    }
+  </textarea>
+  <button onclick="copyToClipboard()">Copy BibTeX</button>
+
+  <script>
+    function copyToClipboard() {
+      const textarea = document.getElementById("bibtexEntry");
+      textarea.select();
+      textarea.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("BibTeX entry copied!");
+    }
+  </script>
+
+
+
+	<br> <br> <hr>
+
+    <!--------------------- Question --------------------->    
+
+    <table align=center width=950px>
+        <center>
+            <h1>
+                Contact me:
+            </h1>
+        </center>
+        <tr>
+            <p>
+                You may directly contact me at <a href="mailto:pritam.sarkar@queensu.ca">pritam.sarkar@queensu.ca</a> or connect with me on <a href="https://www.linkedin.com/in/sarkarpritam/">LinkedIn</a>. <br>
+                &#11088 <strong>I am on the job market for a full-time role as a researcher. If you find my experience a good fit, please reach out.</strong> &#11088
+            </p>
+        </tr>
+    </table>
+
+</html>

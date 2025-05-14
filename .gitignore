@@ -1,0 +1,14 @@
+__pycache__/
+__tmp__/
+__temp__/
+*internal*
+*Internal*
+*INTERNAL*
+internal/
+outputs/
+wandb/
+.env
+.vscode/
+HF_DATA/*
+HF_MODEL/*
+data/videos/*

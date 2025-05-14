@@ -1,0 +1,26 @@
+{
+  "avg_accuracy": 6.3,
+  "avg_step_accuracy": 24.26,
+  "weighted_avg_accuracy": 6.26,
+  "scores_per_class": {
+    "Make Banana Ice Cream": 3.33,
+    "Grill Steak": 5.71,
+    "Make Jello Shots": 26.67,
+    "Change a Tire": 0.0,
+    "Make Lemonade": 3.12,
+    "Add Oil to Your Car": 3.23,
+    "Build Simple Floating Shelves": 6.9,
+    "Make French Toast": 0.0,
+    "Make Irish Coffee": 13.33,
+    "Make French Strawberry Cake": 9.68,
+    "Make Pancakes": 3.12,
+    "Make Meringue": 0.0
+  },
+  "scores_per_step": {
+    "4": 0.0,
+    "3": 18.25,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0
+  }
+}
