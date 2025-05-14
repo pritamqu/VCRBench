@@ -22,15 +22,28 @@ cd VCRBench
 
 This repository supports several LVLMs for direct evaluation on VCRBench.
 
-### Setting up the environment
+
+## Download VCRBench
+
+Our data can be accessed via this link: <a href='https://huggingface.co/datasets/pritamqu/VCRBench'>[VCRBench]</a>
+
+Please download the videos and questions from the link and save them in your local directory.
 
 ```
-conda create -n vcr python=3.10 -y
-conda activate vcr
-pip install -r requirements.txt
+mkdir HF_DATA # create a dir where you want to download the data
+cd HF_DATA # go to that dir
+git lfs install
+git clone https://huggingface.co/datasets/pritamqu/VCRBench
 ```
 
-## Download Weights
+Please make sure to update the `video-folder` and `question-file` in inference scripts as per your path.
+
+## Leaderboard
+
+See our leaderborad [here](https://pritamqu.github.io/VCRBench/#leaderboard).
+If you want to add your model to our leaderboard, please send model responses to `pritam.sarkar@queensu.ca`, in the same the format as provided in [sample response](./output/random/response_1.json).
+
+## Download Model Weights
 
 You can download the open-source weights using:
 
@@ -39,17 +52,15 @@ git lfs install
 git clone git@hf.co:Qwen/Qwen2.5-VL-72B-Instruct
 ```
 
-## Accessing the VCRBench
+OR you can also evaluate models using API as done for [Gemini](./models/gemini.py) and [GPT4o](./models/gpt.py).
 
-Our data can be accessed via this link:  
-<a href='https://huggingface.co/datasets/pritamqu/VCRBench'>[VCRBench]</a>
+### Setting up the environment
 
-Please download the videos and questions from the link and save them in your local directory.
-
-## Leaderboard
-
-See our leaderborad [here](https://pritamqu.github.io/VCRBench/#leaderboard).
-If you want to add your model to our leaderboard, please send model responses to `pritam.sarkar@queensu.ca`, in the same the format as provided in [sample response](./output/random/response_1.json).
+```
+conda create -n vcr python=3.10 -y
+conda activate vcr
+pip install -r requirements.txt
+```
 
 ## Evaluating on VCRBench
 
