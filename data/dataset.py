@@ -13,11 +13,11 @@ The final output should be in this format:
 Correct order: <mention the Clip numbers separated by a comma>
 '''
 
-pp_prompts=dict(
+prompts=dict(
     default=PROMPT,
     rrd="",
 )
-valid_modes=list(pp_prompts.keys())
+valid_modes=list(prompts.keys())
 
 class VCRBench(torch.utils.data.Dataset):
     """basic dataset for inference"""
@@ -36,7 +36,7 @@ class VCRBench(torch.utils.data.Dataset):
         self.load_video_kwargs = load_video_kwargs
         assert mode in valid_modes, print(f"choose from: {valid_modes}")
         self.mode = mode
-        self.prompt = pp_prompts[mode]
+        self.prompt = prompts[mode]
         self.video_root = os.path.join(video_root, 'videos')
 
         print(f"video root: {self.video_root}")
