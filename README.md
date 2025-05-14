@@ -1,10 +1,11 @@
 
-# Exploring Long-form Causal Reasoning Capabilities of Large Video Language Models
+# VCRBench: Exploring Long-form Causal Reasoning Capabilities of Large Video Language Models
 
 <a href='https://arxiv.org/abs/2505.08455'><img src='https://img.shields.io/badge/arXiv-paper-red'></a>
 <a href='https://pritamqu.github.io/VCRBench/'><img src='https://img.shields.io/badge/project-VCRBench-blue'></a> 
 <a href='https://huggingface.co/datasets/pritamqu/VCRBench'><img src='https://img.shields.io/badge/huggingface-datasets-green'></a> 
-</a><a href='https://github.com/pritamqu/VCRBench'><img src='https://img.shields.io/badge/github-repository-purple'></a> 
+<a href='https://github.com/pritamqu/VCRBench'><img src='https://img.shields.io/badge/github-repository-purple'></a> 
+<a href='https://pritamqu.github.io/VCRBench/#leaderboard'><img src='https://img.shields.io/badge/vcrbench-leaderboard-yellow'></a> 
 
 Authors: [Pritam Sarkar](https://pritamsarkar.com) and [Ali Etemad](https://www.aiimlab.com/ali-etemad)
 
@@ -47,7 +48,7 @@ Please download the videos and questions from the link and save them in your loc
 
 ## Leaderboard
 
-See our leaderborad [here](https://pritamqu.github.io/VCRBench)
+See our leaderborad [here](https://pritamqu.github.io/VCRBench/#leaderboard).
 If you want to add your model to our leaderboard, please send model responses to `pritam.sarkar@queensu.ca`, in the same the format as provided in [sample response](./output/random/response_1.json).
 
 ## Evaluating on VCRBench
