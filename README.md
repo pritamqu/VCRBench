@@ -43,7 +43,7 @@ Please make sure to update the `video-folder` and `question-file` in inference s
 See our leaderborad [here](https://pritamqu.github.io/VCRBench/#leaderboard).
 If you want to add your model to our leaderboard, please send model responses to `pritam.sarkar@queensu.ca`, in the same the format as provided in [sample response](./output/random/response_1.json).
 
-## Download Model Weights
+## Download model weights
 
 You can download the open-source weights using:
 
@@ -73,7 +73,7 @@ bash scripts/qwen_2_5_vl/inference72.sh
 
 You can use the given evaluation scripts as a reference to evaluate on other models. 
 
-## Evaluating on VCRBench Equipped with RRD
+## Evaluating on VCRBench equipped with RRD
 
 We also provide scripts to test open-source models equipped with RRD.  
 For example, to evaluate Qwen2.5-VL-72B-Instruct with RRD:
